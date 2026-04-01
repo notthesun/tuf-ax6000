@@ -85,6 +85,7 @@ jobs:
 
       - name: Build firmware
         run: |
+          make toolchain/install -j$(nproc)
           make download -j$(nproc) || {
             echo "Retrying..."
             sleep 60
